@@ -17,6 +17,11 @@ const Nav = () => {
       status: true,
     },
     {
+      item: "About",
+      path: "/about",
+      status: true,
+    },
+    {
       item: "Login",
       path: "/login",
       status: !authStatus,
