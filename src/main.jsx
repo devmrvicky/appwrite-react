@@ -10,7 +10,15 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { Home, Signup, Login, About } from "./pages";
+import {
+  Home,
+  Signup,
+  Login,
+  About,
+  UserSetting,
+  UserProfileSetting,
+} from "./pages";
+import { UserAccountSetting } from "./components";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +27,10 @@ const router = createBrowserRouter(
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/about" element={<About />} />
+      <Route path="/user-setting/" element={<UserSetting />}>
+        <Route path="/user-setting/profile" element={<UserProfileSetting />} />
+        <Route path="/user-setting/account" element={<UserAccountSetting />} />
+      </Route>
     </Route>
   )
 );

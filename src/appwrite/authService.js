@@ -48,6 +48,33 @@ class AuthService {
       console.log(error.message);
     }
   }
+
+  // update email
+  async updateEmail({ email, password }) {
+    try {
+      return await this.account.updateEmail(email, password);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  // updated name
+  async updateName({ name }) {
+    try {
+      return await this.account.updateName(name);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  // Delete account
+  async deleteAccount(id) {
+    try {
+      return await this.account.deleteIdentity(id);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 }
 
 const authService = new AuthService();

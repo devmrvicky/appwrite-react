@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import authService from "../appwrite/authService";
+import authService from "../../appwrite/authService";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { ID } from "appwrite";
-import { login as authLogin } from "../features/authSlice";
+import { login as authLogin, start, end } from "../../features";
 
 const SignupForm = () => {
   const navigate = useNavigate();
@@ -11,12 +11,19 @@ const SignupForm = () => {
   const { register, handleSubmit } = useForm();
 
   const signup = async (data) => {
-    const id = ID.unique();
-    const login = await authService.signup({ id, ...data });
+    try {
+      dispatch(start());
+      const id = ID.unique();
+      const login = await authService.signup({ id, ...data });
 
-    if (login) {
-      dispatch(authLogin(data));
-      navigate("/");
+      if (login) {
+        dispatch(authLogin(data));
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      dispatch(end());
     }
   };
 

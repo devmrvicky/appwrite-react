@@ -1,6 +1,9 @@
 import Container from "./Container";
 import Nav from "./Nav";
-import SignupForm from "./SignupForm";
-import LoginForm from "./LoginForm";
+import SignupForm from "./forms/SignupForm";
+import LoginForm from "./forms/LoginForm";
+import Loading from "./Loading";
+import Footer from "./Footer";
+import UserAccountSetting from "./settings/UserAccountSetting"
 
-export { Container, Nav, SignupForm, LoginForm };
+export { Container, Nav, SignupForm, LoginForm, Loading, Footer, UserAccountSetting };
