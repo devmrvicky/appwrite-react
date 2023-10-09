@@ -68,6 +68,7 @@ class AuthService {
   }
 
   // Delete account
+  //  todo: this service isn't working
   async deleteAccount(id) {
     try {
       return await this.account.deleteIdentity(id);

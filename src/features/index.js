@@ -5,6 +5,7 @@ import authReducer, {
   updateData,
 } from "./authSlice";
 import loadingReducer, { start, end } from "./loadingSlice";
+import noteReducer, { add, addAllNotes } from "./noteSlice";
 
 export {
   authReducer,
@@ -15,4 +16,7 @@ export {
   updateData,
   start,
   end,
+  noteReducer,
+  add,
+  addAllNotes,
 };

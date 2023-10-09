@@ -13,9 +13,10 @@ const SignupForm = () => {
     try {
       dispatch(start());
       const login = await authService.login(data);
-
+      // console.log(login);
       if (login) {
-        dispatch(authLogin(data));
+        const userData = await authService.getUser();
+        dispatch(authLogin(userData));
         navigate("/");
       }
     } catch (error) {
